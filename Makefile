@@ -1,7 +1,7 @@
 SHELL = bash
 PackagePath = $(shell pwd)
 
-LIBRARY_TEXTIO = lib/libBUTool_TextIO.so
+LIBRARY_TEXTIO = lib/libBUTool_BUTextIO.so
 LIBRARY_TEXTIO_SOURCES = $(wildcard src/*.cc)
 LIBRARY_TEXTIO_OBJECT_FILES = $(patsubst src/%.cc,obj/%.o,${LIBRARY_TEXTIO_SOURCES})
 
