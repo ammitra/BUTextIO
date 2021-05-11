@@ -1,5 +1,5 @@
-#ifndef __DUMMY_TEXT_CONTROLLER_HH__
-#define __DUMMY_TEXT_CONTROLLER_HH__
+#ifndef __BU_TEXT_CONTROLLER_HH__
+#define __BU_TEXT_CONTROLLER_HH__
 
 #include "Print.hh"
 #include "PrintLevel.hh"
@@ -10,11 +10,11 @@
 #include <string>
 #include <fstream>
 
-class DummyTextController {
+class BUTextController {
 private:
     std::vector<std::ostream*> streams;
 public:
-    DummyTextController(std::ostream *os);
+    BUTextController(std::ostream *os);
     void Print(const char *fmt, ...);
     void Print(printer a);
     void AddOutputStream(std::ostream *os);
