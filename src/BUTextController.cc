@@ -1,11 +1,11 @@
-#include <DummyTextController.hh>
+#include <BUTextController.hh>
 
-DummyTextController::DummyTextController(std::ostream *os) {
+BUTextController::BUTextController(std::ostream *os) {
     streams.push_back(os);
 }
 
 // deprecated - use Print(printer p)
-void DummyTextController::Print(const char *fmt, ...) {
+void BUTextController::Print(const char *fmt, ...) {
     // wrapper around printerHelper to allow variable arg forwarding
     va_list argp;
     va_start(argp, fmt);
@@ -18,18 +18,18 @@ void DummyTextController::Print(const char *fmt, ...) {
     }
 }
 
-void DummyTextController::Print(printer a) {
+void BUTextController::Print(printer a) {
     std::vector<std::ostream*>::iterator it;
     for (it = streams.begin(); it != streams.end(); it++) {
         *(*it) << a;
     }
 }
 
-void DummyTextController::AddOutputStream(std::ostream *os) {
+void BUTextController::AddOutputStream(std::ostream *os) {
     streams.push_back(os);
 }
 
-void DummyTextController::ResetStreams() {
+void BUTextController::ResetStreams() {
     std::vector<std::ostream*>::iterator it;
     for (it = streams.begin(); it != streams.end(); it++) {
         delete (*it);
